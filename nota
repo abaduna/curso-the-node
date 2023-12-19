@@ -1,0 +1,4 @@
+git remote add origin https://github.com/abaduna/curso-the-node.git
+
+
+git rm -r --cached node_modules

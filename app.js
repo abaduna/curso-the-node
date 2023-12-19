@@ -1,72 +1,51 @@
-const { error } = require("console")
-const fs = require("fs")
+function ordenarProdocto(produc) {
+    return new Promise((resolve,reject)=>{
+        console.log(`Ordenado:${produc}`);
+        setTimeout(() => {
+            if (produc === `taza`) {
+                resolve(`Ordenanod una taza con el logo`)
+            }else{
+                reject(`este producto no esta disponible actualmente`)
+            }
+        }, 2000);
+    })
 
-// leer un archivo
+}
 
-console.log(`antes de leer este archivo `);
+function procesarPedido(respuesta) {
+    return new Promise((resolve,reject)=>{
+        console.log(`procesando respuesta`);
+        console.log(`la respuesta fue_ ${respuesta}`);
+        setTimeout(()=>{
+            resolve(`Gracias por su compra difrutaa tu producto`)
+        },2000)
+    })
+}
+// ordenarProdocto(`taza`)
+//     .then(respuesta =>{
+//         console.log(`Respuesta recivida`);
+//         console.log(respuesta);
+//         return procesarPedido(respuesta)
+//     })
+//     .then(respuestaProceso =>{
+//         console.log(respuestaProceso);
+//     })
+//     .catch(error =>{
+//         console.error(error);
+//     })
+    //--**********-*-*-*-*-*-*-*--**-*-*--*-**-*-*-**-*-*--**-*-*-*-*-
+    console.log(`---------------------------------------------`);
+//hacerlo en la tineda
+    async function realizarPedido (product) {
+        try {
+        const respuesta = await ordenarProdocto(product)
+        console.log(`Respuesta recibida`);
+        console.log(respuesta);
+        const respuestaProcesada = await procesarPedido(respuesta)
+        console.log(respuestaProcesada);            
+        } catch (error) {
+            console.error(error);
+        }
 
-fs.readFile(`index.html`,`utf-8`,(err,contenido)=>{
-    if (err) {
-        console.error(err);
-    
-    }else{
-        console.log(contenido);
     }
-})
-
-//
-console.log(`despues de leer este archivo `);
-//re nombrar un archivo
-
-fs.rename(`main.html`, `index.html`,(err)=>{
-    if (err) {
-        console.log(err)
-        return
-    }
-    console.log(`terminado`);
-})
-console.log(`despues  de cambiar el archivo `);
-//Agregar contenido al final de un archivo
-
-fs.appendFile(`index.html`,`<p>Hola</p>`,(err)=>{
-    if (err) {
-        console.log(`ocurio un error`);
-        console.log(err);
-        return
-    }
-    console.log(`terminado`);
-})
-
-// remplazar todos el constenid
-
-fs.writeFile(`index.html`,`<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Node.Js</title>
-</head>
-<body>
-    <h1>Abaduna</h1>
-    <p>Estoy aprendi node.js</p>
-    <p>remplazado</p>
-</body>
-</html>`,(err)=>{
-    
-    if (err) {
-      console.log(`OCURIO UN ERROR`);  
-      return
-    }
-    console.log(`termiando`);
-})
-console.log(`despues  de agregar  a un  archivo `);
-//Eliminar archivos
-
-fs.unlink(`index2.html`,(err)=>{
-    if (err) {
-        throw err
-    }
-    console.log(`elimiando`);
-})
-
-console.log();
+    realizarPedido(`taza`)
