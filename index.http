@@ -1,0 +1,6 @@
+POST    http://localhost:3000/cursos/promacion
+content-Type:application/application/json
+
+{
+    "title":"learning Node.js"
+}
