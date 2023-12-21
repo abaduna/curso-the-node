@@ -1,5 +1,5 @@
 let infoCuros = {
-    "progrmacion":[
+    progrmacion:[
         {
            id:2,
            title:`aprende python`,
@@ -21,17 +21,17 @@ let infoCuros = {
             nivel:`basico`
          },
     ],
-    "Matematicas":[
+    Matematicas:[
         {
             id:1,
             title:` aprende calculo`,
-            lenguaje:`calculo`,
+            tema:`calculo`,
             vius:13553,
             nivel:`basico`
          },{
             id:1,
             title:` aprende algebra`,
-            lenguaje:`algebra`,
+            tema:`algebra`,
             vius:13553,
             nivel:`intermedio`
          },

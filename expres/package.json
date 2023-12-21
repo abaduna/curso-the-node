@@ -1,0 +1,14 @@
+{
+  "name": "expres",
+  "version": "1.0.0",
+  "description": "curso de expres",
+  "main": "expres.js",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "abaduna",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}

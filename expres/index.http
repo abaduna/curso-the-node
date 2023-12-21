@@ -1,0 +1,38 @@
+POST http://localhost:3000/api/curso/programacion HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":2,
+    "title":" js intermedio",
+    "lenguae":"js",
+    "viws":45676,
+    "nivel":"intermedio"
+}
+
+
+####
+PUT http://localhost:3000/api/curso/programacion/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    "id":2,
+    "title":" pthon intermedio whith proyect",
+    "lenguae":"python",
+    "viws":8258425,
+    "nivel":"avanzado"
+}
+####
+
+PATCH  http://localhost:3000/api/curso/programacion/2 HTTP/1.1
+Content-Type: application/json
+
+{
+    
+    "title":" pthon intermedio whith proyect super coold",
+    "nivel":"super master supremo"
+    
+}
+
+####
+DELETE  http://localhost:3000/api/curso/programacion/2 HTTP/1.1
+Content-Type: application/json
